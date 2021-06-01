@@ -1,0 +1,176 @@
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">KW Infosys</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        {% url 'admin_home' as admin_home %}
+        <a class="nav-link {% if request.path == admin_home %} active {% endif %}" href="{{ admin_home }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Track Your Business
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseorders"
+            aria-expanded="true" aria-controls="collapseorders">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Orders</span>
+        </a>
+        <div id="collapseorders" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="#">Order Reports</a>
+                {% url 'render_create_orders' as render_create_orders %}
+                <a class="collapse-item {% if request.path == render_create_orders %} active {% endif %}" href="{{ render_create_orders }}">Create Orders</a>
+                <a class="collapse-item" href="cards.html">Manage Orders</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseproducts"
+            aria-expanded="true" aria-controls="collapseproducts">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Products</span>
+        </a>
+        <div id="collapseproducts" class="collapse" aria-labelledby="headingUtilities"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Products</h6>
+                <a class="collapse-item" href="cards.html">Product Reports</a>
+                {% url 'render_create_products' as render_create_products %}
+                <a class="collapse-item {% if request.path == render_create_products %} active {% endif %}" href="{{ render_create_products }}">Create Products</a>
+                <a class="collapse-item" href="cards.html">Manage Products</a>
+                <h6 class="collapse-header">Categories</h6>
+                <a class="collapse-item" href="buttons.html">Create Categories</a>
+                <a class="collapse-item" href="cards.html">Manage Categories</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Track Your Client
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseclients"
+            aria-expanded="true" aria-controls="collapseclients">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Clients</span>
+        </a>
+        <div id="collapseclients" class="collapse" aria-labelledby="headingPages"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="login.html">Client Reports</a>
+                <a class="collapse-item" href="register.html">Add Clients</a>
+                <a class="collapse-item" href="forgot-password.html">Manage Clients</a>
+                <div class="collapse-divider"></div>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Provide Resources
+    </div>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseresources"
+            aria-expanded="true" aria-controls="collapseresources">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Study Materials</span>
+        </a>
+        <div id="collapseresources" class="collapse" aria-labelledby="headingPages"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Resources</h6>
+                <a class="collapse-item" href="login.html">Create Resources</a>
+                <a class="collapse-item" href="register.html">Manage Resources</a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">Assignments</h6>
+                <a class="collapse-item" href="404.html">Create Assignments</a>
+                <a class="collapse-item" href="blank.html">Manage Assignments</a>
+                <h6 class="collapse-header">Notes and Cheatsheets</h6>
+                <a class="collapse-item" href="404.html">Create Materials</a>
+                <a class="collapse-item" href="blank.html">Manage Materials</a>
+            </div>
+        </div>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Manage Your Account
+    </div>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseaccount"
+            aria-expanded="true" aria-controls="collapseaccount">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Manage Account</span>
+        </a>
+        <div id="collapseaccount" class="collapse" aria-labelledby="headingPages"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">User Settings</h6>
+                <a class="collapse-item" href="login.html">Manage Profile</a>
+                <a class="collapse-item" href="register.html">Manage Users</a>
+                <div class="collapse-divider"></div>
+                <h6 class="collapse-header">Miscellaneous</h6>
+                <a class="collapse-item" href="404.html">Notifications</a>
+                <a class="collapse-item" href="blank.html">Messages</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsesettings"
+            aria-expanded="true" aria-controls="collapsesettings">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Settings</span>
+        </a>
+        <div id="collapsesettings" class="collapse" aria-labelledby="headingPages"
+            data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">In Progress</h6>
+            </div>
+        </div>
+    </li>
+
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
+
+</ul>
